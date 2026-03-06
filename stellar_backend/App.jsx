@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 
-const API_URL = "https://stellar-analytics-backend.onrender.com";
+const API_URL = window.location.hostname === "localhost" 
+  ? "http://localhost:5000" 
+  : "https://stellar-analytics-backend.onrender.com";
 
 const FIELDS = [
   { name:"koi_period",       label:"Orbital Period",    unit:"days",  min:0.5,   max:1000,   step:0.01,  tooltip:"Days for planet to orbit its star once" },
